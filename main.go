@@ -9,15 +9,12 @@ type Vertex struct {
 	X, Y float64
 }
 
-func (ver Vertex) abs() float64 {
+func (ver *Vertex) abs() float64 {
+  //made abs pointer reciever to avoid copying struct
 	return math.Sqrt((ver.X * ver.X) + (ver.Y * ver.Y))
 }
 
-// func (v *Vertex) change() {
-//   v.X += 10
-//   v.Y += 10
-// }
-func  change(v *Vertex) {
+func (v *Vertex) change() {
   v.X += 10
   v.Y += 10
 }
@@ -38,7 +35,7 @@ func main() {
   // so abs would be the same as  the above in this case 5
 	fmt.Println(vertex.abs())
 
-  change(&vertex)
+  vertex.change()
   // here change is is a pointer reciever so it can change the value of the reciever itself
 
 	fmt.Println(vertex.abs())
