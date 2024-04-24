@@ -19,21 +19,11 @@ func (v *Vertex) change() {
   v.Y += 10
 }
 
-func (v Vertex) nochange() {
-  v.X += 10
-  v.Y += 10
-}
-
 func main() {
 	vertex := Vertex{3, 4}
 
 	fmt.Println(vertex.abs())
   // outupt will be 5
-
-  vertex.nochange()
-  // since nochage is not a pointer reciever it will not change the value of the reciever
-  // so abs would be the same as  the above in this case 5
-	fmt.Println(vertex.abs())
 
   vertex.change()
   // here change is is a pointer reciever so it can change the value of the reciever itself
