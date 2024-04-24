@@ -13,7 +13,11 @@ func (ver Vertex) abs() float64 {
 	return math.Sqrt((ver.X * ver.X) + (ver.Y * ver.Y))
 }
 
-func (v *Vertex) change() {
+// func (v *Vertex) change() {
+//   v.X += 10
+//   v.Y += 10
+// }
+func  change(v *Vertex) {
   v.X += 10
   v.Y += 10
 }
@@ -34,7 +38,7 @@ func main() {
   // so abs would be the same as  the above in this case 5
 	fmt.Println(vertex.abs())
 
-  vertex.change()
+  change(&vertex)
   // here change is is a pointer reciever so it can change the value of the reciever itself
 
 	fmt.Println(vertex.abs())
